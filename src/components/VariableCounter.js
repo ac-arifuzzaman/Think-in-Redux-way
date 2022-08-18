@@ -6,6 +6,7 @@ import {
 } from "../redux/dynamicCounter/actions";
 
 function VariableCounter({ count, increment, decrement }) {
+  console.log(count);
   return (
     <div className="p-4 h-auto flex flex-col items-center justify-center space-y-5 bg-white rounded shadow">
       <div className="text-2xl font-semibold">{count}</div>
@@ -28,7 +29,7 @@ function VariableCounter({ count, increment, decrement }) {
 }
 const mapStateToProps = (state, ownProps) => {
   return {
-    count: ownProps.dynamic ? state.value : state.counter.value,
+    count: ownProps.dynamic ? state.dynamicCounter.value : state.counter.value,
   };
 };
 
