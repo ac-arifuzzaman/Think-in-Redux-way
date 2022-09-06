@@ -18,4 +18,6 @@ const addTodo = (todoText) => {
   };
 };
 
+// load data from localHost and add data on local Storage,
+
 export default addTodo;
