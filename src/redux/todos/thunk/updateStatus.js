@@ -1,12 +1,11 @@
 import { added } from "../actions";
 
-const addTodo = (todoText) => {
+const updatedStatus = (todoId, currentStatus) => {
   return async (dispatch) => {
-    const response = await fetch("http://localhost:9000/todos", {
-      method: "POST",
+    const response = await fetch(`http://localhost:9000/todos/${todoId}`, {
+      method: "PATCH",
       body: JSON.stringify({
-        text: todoText,
-        completed: false,
+        completed: !currentStatus,
       }),
       headers: {
         "Content-type": "application/json; carset=UTF-8",
@@ -18,4 +17,4 @@ const addTodo = (todoText) => {
   };
 };
 
-export default addTodo;
+export default updatedStatus;
