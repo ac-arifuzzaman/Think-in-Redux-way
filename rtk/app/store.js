@@ -1,7 +1,7 @@
-const configureStore = require("@reduxjs/toolkit").configureStore;
+const { configureStore } = require("@reduxjs/toolkit");
 const counterReducer = require("../fetures/counter/counterSlice");
 
-// configureStore 
+// configureStore
 const store = configureStore({
   reducer: {
     counter: counterReducer,
